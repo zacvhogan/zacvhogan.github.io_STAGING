@@ -27,7 +27,8 @@ body {
         "mn mn mn mn"                
         "ft ft ft ft";      
     /* background-color: black;     */
-    align-content: center;
+    align-content: stretch;
+    
     height: 100vh; 
     row-gap: 3rem;
 }
