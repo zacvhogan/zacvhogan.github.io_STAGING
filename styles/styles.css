@@ -1,0 +1,56 @@
+/* 
+  Mobile
+  Section: basic Grid structure, layout
+*/
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  
+  grid-template-rows:repeat(6, 1fr);
+  grid-gap: 1rem;
+  background-color: rgb(31, 25, 22);
+  color: white;
+  height: 100%;
+  justify-items: center;
+
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd hd hd hd hd"
+  "nv nv nv nv nv nv nv nv nv nv nv nv"
+  "in in in in in in in in in in in in"
+  "pr pr pr pr pr pr pr pr pr pr pr pr"
+  "ab ab ab ab ab ab ab ab ab ab ab ab"
+  "cn cn cn cn cn cn cn cn cn cn cn cn";
+  
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-header {
+  grid-area: hd;
+  text-align: center;
+}
+
+.section-nav {
+  grid-area: nv;
+}
+
+.section-intro {
+  grid-area: in;
+} 
+
+.section-project {
+  grid-area: pr;
+}
+
+.section-about {
+  grid-area: ab;
+}
+
+.section-contact {
+  grid-area: cn;
+}
+
+
