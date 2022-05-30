@@ -9,3 +9,9 @@ Plan:
 - Contact form + email
 
 - Footer
+
+
+Features to include:
+- Custom scroll bar
+-- with highlighting on move
+- Mail link - two popup options (mailto or copy address)
