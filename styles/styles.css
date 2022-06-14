@@ -1,17 +1,29 @@
+
 /* 
-  Mobile
+  Section: global variables
+*/
+:root {
+  --main-bg-color: rgb(24, 42, 46);
+  --secondary-bg-color: rgb(138, 41, 117);
+
+  --main-text-color: ;
+  --secondary-text-color: ;
+
+}
+
+/* 
   Section: basic Grid structure, layout
 */
-
 #container {
   display: grid;
   margin: 0;
   grid-template-columns: repeat(12, 1fr);  
   grid-template-rows:repeat(6, min-content);
   grid-gap: 1rem;
-  background-color: rgb(56, 51, 49);
+  background-color: var(--main-bg-color);
   color: white;
   height: 100%;
+  width: 100%;
   justify-items: center;
 
   grid-template-areas: 
@@ -24,83 +36,121 @@
   
 }
 
-.section-header {
+#section-header {
   grid-area: hd;
   text-align: center;
   font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
 }
 
-.section-nav {
+#section-nav {
   /* Grid, positioning, sizing, */
   grid-area: nv;
   justify-self:stretch;
   position: sticky;
-  top: 0;
-  align-items: stretch;
-  
+  top: 0;  
 
   /* Flex and internal alignments */
   display: flex;
   justify-content: center;
   align-items: center;  
 
-  background-color: rgb(51, 62, 73);
+  background-color: var(--secondary-bg-color);
   color: rgb(245, 248, 255);  
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 
+  z-index: 10;
+
 }
 
-.section-intro {
+#section-intro {
   grid-area: in;
 } 
 
-.section-project {
+#section-project {
   grid-area: pr;
   display: flex;
 }
 
-.section-about {
+#section-about {
   grid-area: ab;
 }
 
-.section-contact {
+#section-contact {
   grid-area: cn;
 }
 
 
 
+
+
+        /* 
+          SECTION: 
+          Styling 
+        */
+
+@media (min-width:480px){
+
+
+}
+
 h1 {
-  font-size: 3rem;
+  margin-top: 0.2em;
+  font-size: 5em;
   font-weight: 100;
+  line-height: 0.9em;
+    
 }
 
 h2 {
   font-weight: 100;
   line-height: 0;
+  
 }
 
+.secondary-title {
+  position: relative;
+  bottom: 1em;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
 
-.button-nav {
-  
-  display: block;
-  
+.button-nav {  
+  display: block;  
   text-align: center;
-  padding: 10px 60px;
+  padding: 10px 20px 0px 20px;
 }
+
+/* SECTION:
+Nav Bar Hover Animation */
+
+.list-nav li::after {
+  content: "";
+  display: block;
+  background-color: white;
+  width: 0px;
+  height: 0.3rem;
+  transition: width 0.2s;
+  margin: auto;
+  margin-top: 0.5rem;
+
+  box-shadow: 0rem 0.5rem 1rem rgba(255, 255, 255, 0.726);
+}
+
+.list-nav li:hover::after {
+  width: 100%;
+}
+
+/*  */
 
 .list-nav {
   display: flex;
   width: 100%;
-  justify-content: safe center;
-
-  /* TODO below two lines = broken nav when viewport too narrow */
+  justify-content: safe center; 
   
   flex-wrap: wrap;
-
   list-style-type: none; 
   margin: 0;
   padding: 0; 
@@ -126,4 +176,32 @@ p {
   top: 100px;
   left: 100px;
   flex-grow: 1;
+}
+
+h1::after {
+  position: relative;
+  /* bottom: 0.2em; */
+  content:"_";
+  animation: terminalCursorAnim 1s linear infinite;
+}
+
+@keyframes terminalCursorAnim {
+  
+  0% {opacity: 100%}
+  1% {opacity: 100%}
+  50% {opacity: 80%}
+  99% {opacity: 0%}
+  
+}
+
+.image-hero {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+
+.icon-small{
+  width: 2em;
+  height: auto;
 }
