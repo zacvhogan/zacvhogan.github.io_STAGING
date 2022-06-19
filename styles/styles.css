@@ -4,7 +4,7 @@
 */
 :root {
   --main-bg-color: rgb(24, 42, 46);
-  --secondary-bg-color: rgb(138, 41, 117);
+  --secondary-bg-color: rgb(72, 99, 124);
 
   --main-text-color: ;
   --secondary-text-color: ;
@@ -121,6 +121,7 @@ body {
   display: block;  
   text-align: center;
   padding: 10px 20px 0px 20px;
+  margin: auto;
 }
 
 /* SECTION:
@@ -149,10 +150,11 @@ Nav Bar Hover Animation */
   display: flex;
   width: 100%;
   justify-content: safe center; 
+  align-items: flex-end;
   
   flex-wrap: wrap;
   list-style-type: none; 
-  margin: 0;
+  margin: auto;
   padding: 0; 
 }
 
@@ -205,3 +207,4 @@ h1::after {
   width: 2em;
   height: auto;
 }
+
