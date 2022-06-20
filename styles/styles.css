@@ -39,77 +39,71 @@
   "nv nv nv nv nv nv nv nv nv nv nv nv"
   ".  hd hd hd hd hd hd hd hd hd hd  ."  
   ".  in in in in in in in in in in  ."
-  ".  pr pr pr pr pr pr pr pr pr pr  ."
-  ".  ab ab ab ab ab ab ab ab ab ab  ."
+  ".  wb wb wb wb wb wb wb wb wb wb  ."
+  ".  ar ar ar ar ar ar ar ar ar ar  ."
+  ".  fn fn fn fn fn fn fn fn fn fn  ."
+  ".  me me me me me me me me me me  ."
   ".  cn cn cn cn cn cn cn cn cn cn  .";
   
 }
-
-
-
 
 
 #section-intro {
   grid-area: in;
 } 
 
-#section-project {
-  grid-area: pr;
+#section-web {
+  grid-area: wb;
   display: flex;
+  flex-direction:column;
 }
 
-#section-about {
-  grid-area: ab;
+#section-art {
+  grid-area: ar;
+  display: flex;
+  flex-direction:column;
+}
+
+#section-fungibles {
+  grid-area: fn;
+  display: flex;
+  flex-direction:column;
+}
+
+#section-me {
+  grid-area: me;
+  display: flex;
+  flex-direction:column;
 }
 
 #section-contact {
   grid-area: cn;
+  display: flex;
+  flex-direction:column;
+}
+
+p {
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  margin-bottom: 1em;
 }
 
 
 
-
-
-        /* 
-          SECTION: 
-          Styling 
-        */
 
 @media (min-width:480px){
 
 
 }
 
-h1 {
-  margin-top: 0.2em;
-  font-size: 5em;
-  font-weight: 100;
-  line-height: 0.9em;
-    
-}
 
-h2 {
-  font-weight: 100;
-  line-height: 0;
-  
-}
 
-.secondary-title {
-  position: relative;
-  bottom: 1em;
-}
+
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
 
-
-#section-header {
-  grid-area: hd;
-  text-align: center;
-  font-weight: 100;
-  font-family: 'Major Mono Display', monospace;  
-}
 
 
 #section-nav {
@@ -130,6 +124,7 @@ body {
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 
   z-index: 10;
+  margin-bottom: 0.25em;
 
 }
 
@@ -137,7 +132,6 @@ body {
   display: flex;
   width: 100%;
   justify-content: safe center; 
-  margin: 0;
   flex-wrap: wrap;
   list-style-type: none; 
   
@@ -146,16 +140,14 @@ body {
 .button-nav {  
   display: flex;  
   flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  width: 5em;
-  height:5em;
-  margin: 0px 20px 0px 20px; 
+  justify-content: space-between;  
+  width: auto;
+  height: auto;  
 }
 
 
 
-.list-nav li::before {
+.button-nav::before {
   content: "";
   display: block;
   background-color: rgba(0, 0, 0, 0);
@@ -169,12 +161,12 @@ body {
 Nav Bar Hover Animation */
 
 .button-nav a {
-  display: flex;
+  display: flex; /* Turn element into flex container to easy center */
   justify-content: center;
   align-items: center;
-  height: 50%;  
-  margin: auto;
-  
+  height: 100%;  
+  width: inherit;
+  padding: 0em 1em 0em 1em;  
 }
 
 .button-nav::after {
@@ -199,28 +191,40 @@ Nav Bar Hover Animation */
 /*  */
 
 
+#section-header {
+  grid-area: hd;
+  text-align: center;
+  font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
+}
+
+
+h1 {
+  /* margin-top: 0.2em; */
+  font-size: 5em;
+  font-weight: 100;
+  /* line-height: 0.9em; */
+    
+}
+
+h2 {
+  font-weight: 100;
+  /* line-height: 0; */ 
+}
+
+.secondary-title {
+  position: relative;
+
+}
 
 a:link {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
 
-p {
-  line-height: 1.5em;
-}
 
-#canvas {
-  background-color: #000;
-  height: 500px;
-  width: 500px;
-  border: 1px solid black;
-  margin: 100px;
-  padding: 0px;
-  position: static; /* fixed or static */
-  top: 100px;
-  left: 100px;
-  flex-grow: 1;
-}
+
+
 
 h1::after {
   position: relative;
@@ -242,7 +246,7 @@ h1::after {
   display: block;
   width: 40%;
   height: auto;
-  margin: auto;
+  margin: 2em auto 2em auto;
 }
 
 .icon-small{
