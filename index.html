@@ -6,7 +6,7 @@
     <title>Zac Hogan Web Developer</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/js.js"></script>
+    <script src="scripts/nav-scroll-animate.js"></script>
 
     <!-- Google Fonts link Major Mono Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,63 +23,65 @@
 
   <nav id="section-nav">      
     <ul class="list-nav">
-      <li class="button-nav"><a href="www.test.com"><img src="/img/HeroImage.png" class="icon-small"></img></a></li>
-      <li class="button-nav"><a href="www.test.com">Web</a></li>
-      <li class="button-nav"><a href="www.test.com">Art</a></li>
-      <li class="button-nav"><a href="www.test.com">FTs</a></li>
-      <li class="button-nav"><a href="www.test.com">Me</a></li>
-      <li class="button-nav"><a href="www.test.com">Contact</a></li>      
+      <li class="button-nav" id="nav-button-header"><a href="www.test.com"><img src="/img/HeroImage.png" class="icon-small"></img><div class="nav-indicator"></a></li>
+      <li class="button-nav" id="nav-button-web"><a href="#section-web">Web<div class="nav-indicator"></a></li>
+      <li class="button-nav" id="nav-button-art"><a href="#section-art">Art<div class="nav-indicator"></a></li>
+      <li class="button-nav" id="nav-button-fungibles"><a href="#section-fungibles">FTs<div class="nav-indicator"></a></li>
+      <li class="button-nav" id="nav-button-me"><a href="#section-me">Me<div class="nav-indicator"></a></li>
+      <li class="button-nav" id="nav-button-contact"><a href="#section-contact">Contact<div class="nav-indicator"></a></li>      
     </ul>    
   </nav>
 
 
-
-  <header id="section-header">
+  <header class="section" id="section-header">
     <h1>zAc hoGan</h1> 
     <br>
     <h2 class="secondary-title"> Websites and things</h2>
     <br>
     <img src="img/HeroImage.png" class="image-hero">
+
+    <p>
+      I've worked with tech as a life-long hobbyist and through managing the systems and technology for a public library Makerspace.
+    </p>
+    <p>
+      I'm ready to take the next step and learn from the best in my quest to become
+      a <strong>Frontend&nbsp;developer.</strong>
+    </p>
   </header>
 
 
   
 
-  <div id="section-intro">    
-    <p>
-      I've done a lot of work with tech 
-      as a life-long hobbyist and in managing the
-      systems and technology for a public library Makerspace.
-    </p>
-    <p>
-      I'm ready to take the next step and learn from the best in my quest to become
-      a Frontend developer.
-    </p>
-  </div>
 
 
-  <div id="section-web">
+  <div class="section" id="section-web">
     <h2 id="web-header">Web</h2>
     <p>Web development projects</p>
+    <div class="spacer-div"></div>
   </div>
 
-  <div id="section-art">
+  <div class="section" id="section-art">
     <h2 id="art-header">Art</h2>
+    <div class="spacer-div"></div>
   </div>
 
-  <div id="section-fungibles">
+  <div class="section" id="section-fungibles">
     <h2 id="fungibles-header">Fungible Tokens</h2>
+    <div class="spacer-div"></div>
   </div>
 
-  <div class="section-me">
-
+  <div class="section" id="section-me">
+    <h2 id="me-header">Me</h2>
+    <div class="spacer-div"></div>
   </div>
 
 
-  <div id="section-contact">
+  <div class="section" id="section-contact">
+    <h2 id="contact-header">Contact</h2>
     Contact info<br>
     Box<br>
     Etc
+    <div class="spacer-div"></div>
   </div>
 
 </body>

@@ -1,6 +1,14 @@
 
 /* 
-  Boilerplate
+  Margin at bottom of each section 8em
+  TODO turn this into a global variable or more easily integrate
+  this into JQuery somehow? Only if needed for scroll calcs
+ */
+
+
+
+/* 
+  || Boilerplate padding/margin changes
 */
 
 *{
@@ -8,9 +16,14 @@
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 5em;
+}
+
 /* 
-  Section: global variables
+  || Global Variables
 */
+
 :root {
   --main-bg-color: rgb(24, 42, 46);
   --secondary-bg-color: rgb(72, 99, 124);
@@ -21,17 +34,17 @@
 }
 
 /* 
-  Section: basic Grid structure, layout
+  || Grid Container
 */
 #container {
-  display: grid;
+  display: grid; 
   margin: 0;
   grid-template-columns: repeat(12, 1fr);  
   grid-template-rows:repeat(6, min-content);
   grid-gap: 1rem;
   background-color: var(--main-bg-color);
   color: white;
-  height: 100%;
+  height: auto;
   width: 100%;
   justify-items: center;
 
@@ -43,7 +56,7 @@
   ".  ar ar ar ar ar ar ar ar ar ar  ."
   ".  fn fn fn fn fn fn fn fn fn fn  ."
   ".  me me me me me me me me me me  ."
-  ".  cn cn cn cn cn cn cn cn cn cn  .";
+  ".  cn cn cn cn cn cn cn cn cn cn  .";  
   
 }
 
@@ -93,7 +106,6 @@ p {
 
 @media (min-width:480px){
 
-
 }
 
 
@@ -104,7 +116,10 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
 
-
+.section { 
+  max-width: 40em;
+  margin-bottom: 8em;
+}
 
 #section-nav {
   /* Grid, positioning, sizing, */
@@ -169,7 +184,12 @@ Nav Bar Hover Animation */
   padding: 0em 1em 0em 1em;  
 }
 
-.button-nav::after {
+
+.nav-indicator:hover {
+  width: 100%;
+}
+
+.nav-indicator {
   content: "";
   display: block;
   position: relative;
@@ -184,9 +204,6 @@ Nav Bar Hover Animation */
   box-shadow: 0rem 0.5rem 1rem rgba(255, 255, 255, 0.726);
 }
 
-.button-nav:hover::after {
-  width: 100%;
-}
 
 /*  */
 
@@ -194,21 +211,23 @@ Nav Bar Hover Animation */
 #section-header {
   grid-area: hd;
   text-align: center;
-  font-weight: 100;
-  font-family: 'Major Mono Display', monospace;  
+  font-weight: 100;  
 }
+
 
 
 h1 {
   /* margin-top: 0.2em; */
   font-size: 5em;
   font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
   /* line-height: 0.9em; */
     
 }
 
 h2 {
   font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
   /* line-height: 0; */ 
 }
 
@@ -218,6 +237,11 @@ h2 {
 }
 
 a:link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+a:visited {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -254,3 +278,11 @@ h1::after {
   height: 2em;
 }
 
+
+.spacer-div {
+  height: 500px;
+}
+
+.row-data {
+  border: 1px solid red;
+}
