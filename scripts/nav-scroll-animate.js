@@ -5,7 +5,11 @@
 // apply CSS to the .nav-indicator for that button to highlight it
 // while resetting CSS for all other .nav-indicators each scroll
 
+const buttonActive = "nav-indicator--active";
+
 $(document).ready(function(){
+  console.log("nav-scroll-animate.js running");
+
   const navKeyValuePairs = {
     "section-header": "#nav-button-header",
     "section-web": "#nav-button-web",
@@ -14,15 +18,22 @@ $(document).ready(function(){
     "section-me": "#nav-button-me",
     "section-contact": "#nav-button-contact"
   };  
- 
+
+  // Set header button highlight on initial page load
+  $("#nav-button-header").children(".nav-indicator").addClass(buttonActive);
+
+  // Call scroll function to monitor viewport and highlight nav elements as appropriate
   $(window).scroll(function(){
-     scrollFunction(navKeyValuePairs);   
+      scrollFunction(navKeyValuePairs);   
   });
+
+  
 
 });
 
 
 function scrollFunction(navKeyValuePairs) {
+  console.log("scroll");
 
   // Each Scroll...
   // Apply CSS to set width of all nav-indicator elements to 0  
@@ -46,28 +57,25 @@ function scrollFunction(navKeyValuePairs) {
   // Use of a hard-coded object literal to store key-value pairs
   // Means addition or removal of sections requires updates in mulitple places
 
-
+  
   let currentSection = "";
   let currentNav = "";
-  $(".nav-indicator").css("width","0%");
-  
+  $(".nav-indicator").removeClass(buttonActive); 
 
   $(".section").each(function(){    
     if(window.scrollY > ($(this).offset().top - (window.innerHeight * 0.7))) {
       currentSection = $(this).prop("id");      
     }    
-  });
-  
+    console.log(currentSection);
+  });  
 
 // Take current section and apply CSS to the associated nav button
 // use key value pair object to find.
 
-
-
-
   currentNav = navKeyValuePairs[currentSection];
-  console.log("Current section = " + currentNav);
+  console.log(currentNav);
 
-  $(currentNav).children(".nav-indicator").css("width", "100%"); 
- 
+  // This traversal seems bananas too long
+  // Get feedback on this
+  $(currentNav).children("a").children(".nav-indicator").addClass(buttonActive); 
 }
