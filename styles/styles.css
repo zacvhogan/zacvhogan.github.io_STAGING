@@ -36,7 +36,7 @@ html {
 /* 
   || Grid Container
 */
-#container {
+#body-container {
   display: grid; 
   margin: 0;
   grid-template-columns: repeat(12, 1fr);  
@@ -121,7 +121,7 @@ body {
   margin-bottom: 2em;
 }
 
-#section-nav {
+.menu {
   /* Grid, positioning, sizing, */
   grid-area: nv;
   justify-self:stretch;
@@ -143,7 +143,7 @@ body {
 
 }
 
-.list-nav {
+.menu-list {
   display: flex;
   width: 100%;
   justify-content: center; 
@@ -151,7 +151,7 @@ body {
   list-style-type: none;   
 }
 
-.button-nav {  
+.button {  
   display: flex;  
   flex-direction: column;
   justify-content: space-between;  
@@ -161,7 +161,7 @@ body {
 
 
 
-.button-nav a:first-child::before {
+.button-link__top-spacer {
   content: "";
   display: block;
   background-color: rgba(0, 0, 0, 0);
@@ -175,7 +175,7 @@ body {
 /* SECTION:
 Nav Bar Hover Animation */
 
-.button-nav a {
+.button-link {
   display: flex; /* Turn element into flex container to easy center */
   flex-direction: column;
   justify-content: space-between;
@@ -188,15 +188,15 @@ Nav Bar Hover Animation */
 }
 
 
-.nav-indicator:hover {
+.button-link__bottom-spacer:hover {
   width: 100%;
 }
 
-.nav-indicator--active {
+.button-link__bottom-spacer--active {
   width: 100% !important;
 }
 
-.nav-indicator {
+.button-link__bottom-spacer {
   content: "";
   display: block;
   position: relative;
