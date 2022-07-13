@@ -8,7 +8,7 @@
 const buttonActive = "nav-indicator--active";
 
 $(document).ready(function(){
-  console.log("nav-scroll-animate.js running");
+  // console.log("nav-scroll-animate.js running");
 
   const navKeyValuePairs = {
     "section-header": "#nav-button-header",
@@ -20,7 +20,8 @@ $(document).ready(function(){
   };  
 
   // Set header button highlight on initial page load
-  $("#nav-button-header").children(".nav-indicator").addClass(buttonActive);
+  $("#nav-button-header").children("a").children(".nav-indicator").addClass(buttonActive)
+  
 
   // Call scroll function to monitor viewport and highlight nav elements as appropriate
   $(window).scroll(function(){
@@ -33,7 +34,7 @@ $(document).ready(function(){
 
 
 function scrollFunction(navKeyValuePairs) {
-  console.log("scroll");
+  // console.log("scroll");
 
   // Each Scroll...
   // Apply CSS to set width of all nav-indicator elements to 0  
@@ -66,16 +67,17 @@ function scrollFunction(navKeyValuePairs) {
     if(window.scrollY > ($(this).offset().top - (window.innerHeight * 0.7))) {
       currentSection = $(this).prop("id");      
     }    
-    console.log(currentSection);
+   
+    // console.log(currentSection);
   });  
 
 // Take current section and apply CSS to the associated nav button
 // use key value pair object to find.
 
   currentNav = navKeyValuePairs[currentSection];
-  console.log(currentNav);
+  // console.log(currentNav);
 
   // This traversal seems bananas too long
   // Get feedback on this
   $(currentNav).children("a").children(".nav-indicator").addClass(buttonActive); 
-}
+};
