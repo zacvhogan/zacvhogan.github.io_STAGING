@@ -1,21 +1,35 @@
-$(document).ready(function(){
-  console.log("click function run");
+// Your nav bar height in px
+// Scroll calculations offset scroll by this amount to keep target section on screen
+let topNavBarHeight = 100; 
 
-  // On click of each nav link, run clickHandler and pass the click event to it
-  $(".button-nav").children("a").on("click", function(click){
+$(document).ready(function(){  
+
+  // When nav item clicked, run clickHandler()
+  $(".button__link").on("click", function(click){
     clickHandler(click);
   });  
 });
 
+function clickHandler(click){  
+  
+  // Location of the section to scroll to, set later
+  let targetLocation = 0;  
 
+  // Find the id of the element to scroll to
+  // Using "section-" prefix and suffix of button clicked id
+  let targetName = "#section-" + click.target.parentElement.id.replace("button-", "");
+  
+  // Generate location (px) of section to scroll to. Offset of section
+  // from top of document MINUS the height of the 
+  // top nav bar if nav bar is sticky  
+  targetLocation = $(targetName).offset().top - topNavBarHeight;
 
-function clickHandler(click){
-  console.log(click.target.parentElement.id);
-  // Fetch id of section to scroll to
-    // Use a strict naming convention for nav links and sections in HTML,
-    // and generate the matching section name to scroll to 
-  // Fetch y coords of section
-  // scroll to these coords
+  // Scroll to targetLocation using smooth scrolling
+  window.scrollTo({
+    top: targetLocation,
+    left: 0,
+    behavior: 'smooth'
+  });
 
 }
 

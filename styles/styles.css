@@ -70,7 +70,7 @@ html {
   flex-direction:column;
 }
 
-#section-art {
+#section-other {
   grid-area: ar;
   display: flex;
   flex-direction:column;
@@ -128,11 +128,6 @@ body {
   position: sticky;
   top: 0;  
 
-  /* Flex and internal alignments */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;   */
-
   background-color: var(--secondary-bg-color);
   /* TODO rewrite color with global var */
   color: rgb(245, 248, 255);  
@@ -159,23 +154,7 @@ body {
   height: auto;  
 }
 
-
-
-.button-link__top-spacer {
-  content: "";
-  display: block;
-  background-color: rgba(0, 0, 0, 0);
-  width: 100%;
-  height: 0.3rem;  
-
-}
-
-
-
-/* SECTION:
-Nav Bar Hover Animation */
-
-.button-link {
+.button__link {
   display: flex; /* Turn element into flex container to easy center */
   flex-direction: column;
   justify-content: space-between;
@@ -187,16 +166,16 @@ Nav Bar Hover Animation */
   
 }
 
-
-.button-link__bottom-spacer:hover {
+.button__top-spacer {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  height: 0.3rem;  
+
 }
 
-.button-link__bottom-spacer--active {
-  width: 100% !important;
-}
-
-.button-link__bottom-spacer {
+.button__bottom-spacer {
   content: "";
   display: block;
   position: relative;
@@ -209,10 +188,24 @@ Nav Bar Hover Animation */
   box-shadow: 0rem 0.5rem 1rem rgba(255, 255, 255, 0.726);
 }
 
+.button__bottom-spacer--active {
+  width: 100% !important;
+}
 
 
 
-/*  */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #section-header {

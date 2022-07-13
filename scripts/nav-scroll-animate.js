@@ -5,27 +5,19 @@
 // apply CSS to the .nav-indicator for that button to highlight it
 // while resetting CSS for all other .nav-indicators each scroll
 
-const buttonActive = "nav-indicator--active";
+const buttonActive = "button__bottom-spacer--active";
 
 $(document).ready(function(){
-  // console.log("nav-scroll-animate.js running");
+  console.log("nav-scroll-animate.js running");
 
-  const navKeyValuePairs = {
-    "section-header": "#nav-button-header",
-    "section-web": "#nav-button-web",
-    "section-art": "#nav-button-art",
-    "section-fungibles": "#nav-button-fungibles",
-    "section-me": "#nav-button-me",
-    "section-contact": "#nav-button-contact"
-  };  
-
-  // Set header button highlight on initial page load
-  $("#nav-button-header").children("a").children(".nav-indicator").addClass(buttonActive)
   
 
-  // Call scroll function to monitor viewport and highlight nav elements as appropriate
+  // Set header button highlight on initial page load
+  $("#button-header").children("a").children(".button__bottom-spacer").addClass(buttonActive)
+  
+
   $(window).scroll(function(){
-      scrollFunction(navKeyValuePairs);   
+      scrollFunction();   
   });
 
   
@@ -61,7 +53,7 @@ function scrollFunction(navKeyValuePairs) {
   
   let currentSection = "";
   let currentNav = "";
-  $(".nav-indicator").removeClass(buttonActive); 
+  $(".button__bottom-spacer").removeClass(buttonActive); 
 
   $(".section").each(function(){    
     if(window.scrollY > ($(this).offset().top - (window.innerHeight * 0.7))) {
@@ -74,10 +66,11 @@ function scrollFunction(navKeyValuePairs) {
 // Take current section and apply CSS to the associated nav button
 // use key value pair object to find.
 
-  currentNav = navKeyValuePairs[currentSection];
-  // console.log(currentNav);
+  currentNav = "#button-" + currentSection.replace("section-", "");
+  console.log(currentNav);
 
   // This traversal seems bananas too long
   // Get feedback on this
-  $(currentNav).children("a").children(".nav-indicator").addClass(buttonActive); 
+  $(currentNav).children("a").children(".button__bottom-spacer").addClass(buttonActive); 
 };
+
