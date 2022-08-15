@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/nav-scroll-animate.js"></script>
-    <script src="scripts/nav-click-interact.js"></script>
+    <script src="scripts/easyScrollTo.js"></script>
+    <script src="scripts/zHHeroAnimation.js"></script>
 
     <!-- Google Fonts link Major Mono Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,50 +35,37 @@
 <body id="body-container"> 
 
 
-  <nav class="menu">      
-    <ul class="menu-list">
+  <nav class="menu">               
+      <a class="button" id="button-header" href="javascript:;">
+        <div class="button__top-spacer"></div>
+          &#9670 <!-- Diamond symbol -->
+        <div class="button__bottom-spacer"></div> <!-- use menu-button_active-indicator--active modifier -->
+      </a>      
 
-      <li class="button" id="button-header">        
-          <a class="button__link" href="javascript:;">
-            <div class="button__top-spacer"></div>
-              &#9670 <!-- Diamond symbol -->
-            <div class="button__bottom-spacer"></div> <!-- use menu-button_active-indicator--active modifier -->
-          </a>
-      </li>
-
-      <li class="button" id="button-web">        
-        <a class="button__link" href="javascript:;">
-          <div class="button__top-spacer"></div>
-            Web 
-          <div class="button__bottom-spacer"></div> 
-        </a>
-      </li>
-
-      <li class="button" id="button-other">        
-        <a class="button__link" href="javascript:;">
+      <a class="button" id="button-web" href="javascript:;">
+        <div class="button__top-spacer"></div>
+          Web 
+        <div class="button__bottom-spacer"></div> 
+      </a>
+  
+        <a class="button" id="button-other" href="javascript:;">
           <div class="button__top-spacer"></div>
             Other <!-- Diamond symbol -->
           <div class="button__bottom-spacer"></div> <!-- use menu-button_active-indicator--active modifier -->
         </a>
-      </li>
 
-      <li class="button" id="button-me">        
-        <a class="button__link" href="javascript:;">
+        <a class="button" id="button-me" href="javascript:;">
           <div class="button__top-spacer"></div>
             Me <!-- Diamond symbol -->
           <div class="button__bottom-spacer"></div> <!-- use menu-button_active-indicator--active modifier -->
         </a>
-      </li>
 
-      <li class="button" id="button-contact">        
-        <a class="button__link" href="javascript:;">
+        <a class="button" id="button-contact" href="javascript:;">
           <div class="button__top-spacer"></div>
             Contact <!-- Diamond symbol -->
           <div class="button__bottom-spacer"></div> <!-- use menu-button_active-indicator--active modifier -->
-        </a>
-      </li>
-
-    </ul>    
+        </a>  
+  
   </nav>
 
 
@@ -131,7 +119,7 @@
   </div>
 
 
-  <div class="section" id="section-contact">
+  <div class="menu" id="section-contact">
     <h2 id="contact-header">Contact</h2>
     Contact info<br>
     <br><br><br><br><br><br><br><br><br><br><br><br>

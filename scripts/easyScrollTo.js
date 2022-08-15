@@ -1,11 +1,13 @@
 // Your nav bar height in px
 // Scroll calculations offset scroll by this amount to keep target section on screen
 let topNavBarHeight = 100; 
+let buttonClass = ".button";
+
 
 $(document).ready(function(){  
 
   // When nav item clicked, run clickHandler()
-  $(".button__link").on("click", function(click){
+  $(buttonClass).on("click", function(click){
     clickHandler(click);
   });  
 });
@@ -17,7 +19,7 @@ function clickHandler(click){
 
   // Find the id of the element to scroll to
   // Using "section-" prefix and suffix of button clicked id
-  let targetName = "#section-" + click.target.parentElement.id.replace("button-", "");
+  let targetName = "#section-" + click.target.id.replace("button-", "");
   
   // Generate location (px) of section to scroll to. Offset of section
   // from top of document MINUS the height of the 
