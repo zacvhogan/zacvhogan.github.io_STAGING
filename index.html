@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+  <head>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,6 +11,8 @@
     <script src="scripts/nav-scroll-animate.js"></script>
     <script src="scripts/easyScrollTo.js"></script>
     <script src="scripts/zHHeroAnimation.js"></script>
+    <script async src="scripts/seeMoreButton.js"></script>
+    <script src="https://kit.fontawesome.com/a53c6f17ad.js" crossorigin="anonymous"></script>
 
     <!-- Google Fonts link Major Mono Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,21 +21,8 @@
   </head>
 
 
-  <!-- 
-    Logo tooltips
-  Clicking this does nothing
-  Really it does absolutely nothing
-  Um do I come into your house and click your logo??
-  You're gonna give yourself RSI stop
-  The last time somebody was this curious was 
-  N O W  Y O U ' V E  D O N E  I T -->
-
-
-
-
 
 <body id="body-container"> 
-
 
   <nav class="menu">               
       <a class="button" id="button-header" href="javascript:;">
@@ -72,7 +61,7 @@
   <header class="section" id="section-header">
     <h1>zAc<br>hoGan</h1> 
     <br>
-    <h2 class="secondary-title"> Websites and things</h2>
+    <h3 class="secondary-title"> Websites and things</h3>
     <br>
     <img src="img/HeroImage.png" class="image-hero">
 
@@ -91,8 +80,31 @@
 
 
   <div class="section" id="section-web">
-    <h2 id="web-header">Web</h2>
-    <p>Web development projects</p>
+    <h2>Web</h2> <br>
+    <article>
+      <h4>www.zachoGAn.com - <a href="https://github.com/zacvhogan/zacvhogan.github.io"><i class="fa-brands fa-github"></i></a></h4>
+      <div class="web-portfolio">
+        <p>Portfolio Website</p>
+        <p><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3"></i> <i class="fa-brands fa-js"></i></p>
+        <p>A little personal portfolio site about me, for you!</p>        
+        <p>Using JQuery, FontAwesome, xyz libraries, and a couple of personal libraries.</p>
+        <button class="see-more-button web-portfolio__see-more-button">More info. . .</button>
+        <div class="web-portfolio__extended">
+          Some<br>more<br>text<br>and<br>whatnot
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h4>easyScrollTo.js- <a href="hhttps://github.com/zacvhogan/easyScrollTo"><i class="fa-brands fa-github"></i></a></h4>
+      <div class="web-body">
+        <p>Javascript Library</p>
+        <p><i class="fa-brands fa-js"></i></p>
+        <p>A tiny JS library that I developed to quickly implement smooth scrolling to page sections driven by
+          page links and buttons.</p>        
+        <p>More info. . .</p>
+      </div>
+    </article>
     <div class="spacer-div"></div>
   </div>
 
@@ -105,6 +117,7 @@
       <h3>Fungible Tokens</h3>   
       <p>Everybody wants to buy something that they can funge.<br>
         Look no further! Wear it, funge it, swap it, sell it - it's merch, not an investment.</p>
+      
     </div>
     <div class="section-art__content">
       <h3>Video</h3>   

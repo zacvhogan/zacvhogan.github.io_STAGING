@@ -46,6 +46,7 @@ html {
   color: white;
   height: auto;
   width: 100%;
+  /* text-align: justify; */
   justify-items: center;
 
   grid-template-areas: 
@@ -112,10 +113,16 @@ body {
 .section { 
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 40em;
-  margin-bottom: 8em;
-
+  
+  margin-bottom: 8em; 
 }
+
+article {
+  margin-bottom: 3em;
+}
+
 
 .section-art__content {
   margin-bottom: 2em;
@@ -191,7 +198,9 @@ body {
 
 
 
-
+.fa-brands {
+  font-size: 1.5em;
+}
 
 
 
@@ -220,9 +229,24 @@ h1 {
 }
 
 h2 {
+  font-size: 4em;
   font-weight: 100;
   font-family: 'Major Mono Display', monospace;  
   /* line-height: 0; */ 
+}
+
+h3 {
+  
+  font-size: 5vw;
+  font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
+  /* line-height: 0; */ 
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 100;
+  font-family: 'Major Mono Display', monospace;  
 }
 
 .secondary-title {
@@ -287,13 +311,37 @@ h1::after {
   border: 1px solid red;
 }
 
+.web-portfolio{
+  border-left: 3px solid white;
+  padding-left: 1em;
+  margin-top: 1em;  
+}
+
+.web-portfolio__extended {  
+  max-height: 0px;  
+  font-family: inherit;
+  font-weight: inherit;
+  position: relative;
+}
+
+.see-more-button {
+  border: none;
+  padding: 0.5em;
+  background-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
+}
+
+.see-more-button:hover {
+  background-color:rgb(95, 124, 151)
+}
+
 
 @media only screen and (min-width: 600px){
-
   h1 {
-    font-size: 6em;
-    
+    font-size: 6em;    
   }
 
-
+  h3 {
+    font-size: 1.5em;
+  }
 }
