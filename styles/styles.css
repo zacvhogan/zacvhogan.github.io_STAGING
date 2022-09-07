@@ -311,18 +311,21 @@ h1::after {
   border: 1px solid red;
 }
 
-.web-portfolio{
+.web-portfolio, .web-easy-scroll{
   border-left: 3px solid white;
   padding-left: 1em;
   margin-top: 1em;  
 }
 
 .web-portfolio__extended {  
-  height: 0px;  
-  opacity: 0;
-  visibility: hidden;
+  /* height: 0px;  
+  opacity: 0;   */
   font-family: inherit;
   font-weight: inherit;  
+}
+
+.extendable-content {
+  visibility: hidden;
 }
 
 .see-more-button {
