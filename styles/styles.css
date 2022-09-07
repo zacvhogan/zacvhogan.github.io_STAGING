@@ -318,17 +318,19 @@ h1::after {
 }
 
 .web-portfolio__extended {  
-  max-height: 0px;  
+  height: 0px;  
+  opacity: 0;
+  visibility: hidden;
   font-family: inherit;
-  font-weight: inherit;
-  position: relative;
+  font-weight: inherit;  
 }
 
 .see-more-button {
-  border: none;
+  border: 2px white solid;
   padding: 0.5em;
-  background-color: var(--secondary-bg-color);
+  background-color: rgba(0, 0, 0, 0);
   color: var(--main-text-color);
+  transition: background-color 0.2s;
 }
 
 .see-more-button:hover {
