@@ -14,33 +14,36 @@ buttonList.forEach((button) => button.addEventListener("click", buttonClick.bind
 function buttonClick() { 
 
   // For each button, generate selector for extended content <p> paragraph
-  // Using the className of the parent <div> and an identifying suffix.
-  // TODO: Probably shouldn't be doing this on each click. Refactor to do this once per page load instead.
+  // Using the className of the parent <div> and an identifying suffix. 
+  // TODO: Probably shouldn't be doing this on each click? Get advice. Maybe refactor to do this once per page load instead.
   let extendedContentSelector = "." + this.closest("div").className + "__extended";
-  let extendedContent = document.querySelector(extendedContentSelector);  
+  let extendedContent = document.querySelector(extendedContentSelector);    
 
-  // Get current visibility status of the extended content
+  // Get current visibility status of the extended content DOM node
   // Do this once per click to ensure visiblity status always up to date
+  // Use visibility status of node instead of tracking via secondary variable - reduced chance of reassignment errors.
   let extendedContentCSS = window.getComputedStyle(extendedContent);
   let extendedContentState = extendedContentCSS.getPropertyValue('visibility');
 
  
 
-  // Toggle content depending on visibility
+  // On each click, check content visibility
+  // Toggle - run anim. to shift to inverse state via toggleContent()
   if (extendedContentState == "visible"){
-    toggleContent(extendedContent, "hide")
+    toggleContent(extendedContent, "hide", this)    
   }
   else if (extendedContentState == "hidden"){
-    toggleContent(extendedContent, "show")
+    toggleContent(extendedContent, "show", this)    
   }
 }
 
 
-function toggleContent(extendedContent, action){  
+function toggleContent(extendedContent, action, button){  
 
   let heightDelay;
   let visibilityDelay;
   let animDirection;
+  let animDuration = 300; 
   
   // Maximum height of extendable content. Calculated each button click to ensure up to date with
   //  document and viewport dimensions.
@@ -55,11 +58,10 @@ function toggleContent(extendedContent, action){
   // TODO: convoluted solution, revise?
   if (animDirection == "normal"){
     heightDelay = 0;
-    visibilityDelay = 300;
-    console.log("show");
+    visibilityDelay = animDuration;    
   }
   else{
-    heightDelay = 300;
+    heightDelay = animDuration;
     visibilityDelay = 0;
   }
 
@@ -78,13 +80,13 @@ function toggleContent(extendedContent, action){
     fill: "forwards",
     easing: "ease",
     direction: animDirection,
-    delay: heightDelay,
-    visibility: "visibile"
+    delay: heightDelay,   
   };
 
   let animVisibilityKeys = [
     {
       opacity: 0,
+      // Set visibility of extendable node to track status 
       visibility: "hidden"      
     },   
     {
@@ -98,21 +100,26 @@ function toggleContent(extendedContent, action){
     duration: 350,    
     fill: "forwards",
     easing: "ease",
-    direction: animDirection,
-    visibility: "hidden"
+    direction: animDirection,   
   };
 
   // Run the animations for height and visibility
   extendedContent.animate(animHeightKeys, animHeightOptions);
   extendedContent.animate(animVisibilityKeys, animVisibilityOptions);
+  console.log(button);
 
 // TODO: update height of extendedContent on window resize to retain good formatting
 // TODO: Change button text on click
-// TODO: Set height initially to 0
 
 
+  setTimeout(() => {toggleButton(action, button)}, animDuration);
 }
 
+
+function toggleButton(action, button){
+  action == "show"? button.innerHTML = "Show Less" : button.innerHTML = "Show More";
+  console.log("trigger");
+}
 
 
 

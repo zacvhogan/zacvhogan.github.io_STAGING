@@ -114,8 +114,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 40em;
-  
+  max-width: 40em;  
   margin-bottom: 8em; 
 }
 
@@ -326,6 +325,7 @@ h1::after {
 
 .extendable-content {
   visibility: hidden;
+  height: 0px;
 }
 
 .see-more-button {
