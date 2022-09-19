@@ -6,18 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zac Hogan Web Developer</title>
+
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/nav-scroll-animate.js"></script>
     <script src="scripts/easyScrollTo.js"></script>
     <script src="scripts/zHHeroAnimation.js"></script>
     <script async src="scripts/seeMoreButton.js"></script>
     <script src="https://kit.fontawesome.com/a53c6f17ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    
+
 
     <!-- Google Fonts link Major Mono Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link "rel=preload" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=block" rel="stylesheet">
+  
+  
+  
   </head>
 
 
@@ -180,20 +189,44 @@
 
   <div class="section" id="section-other">
     <h2 id="art-header">other work</h2>
-    <div class="section-art__content">
-      <h3>design and illustrAtion</h3>   
-    </div>
-    <div class="section-art__content">
-      <h3>fungible tokens</h3>   
-      <p>Everybody wants to buy something that they can funge.<br>
-        Look no further! Wear it, funge it, swap it, sell it - it's merch, not an investment.</p>
-      
-    </div>
-    <div class="section-art__content">
-      <h3>Video</h3>   
-    </div>
-  </div>
+    <div>
+      <h3 class="section__content-heading">design and illustrAtion</h3>  
+        <p>
+          I studied Visual Art at the University of Auckland, with a focus on illustration and 
+          concept art for media.
+        </p>
+        <div style="height: 250px">
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
 
+              <ul class="glide__slides">
+                <li class="glide__slide">0</li>
+                <li class="glide__slide">1</li>
+                <li class="glide__slide">2</li>
+                <li class="glide__slide">3</li>
+                <li class="glide__slide">4</li>
+                <li class="glide__slide">5</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div>
+      <h3>makerspAce development and redesign</h3>  
+        <p>
+          From 2018 - present I've been the Makerspace Librarian at Auckland Central City Library,
+          responsible for managing the services and space.
+        </p>
+        <p>
+          During my time I've redesigned the branding, decor, and layout of the space. Managed the equipment, designed, etc etc.
+          Update content from CV and Linkedin
+        </p>
+
+    </div>
+  
+  </div>
 
 
   <div class="section" id="section-me">
@@ -250,7 +283,9 @@
 
 
 
-
+<script async>
+  new Glide('.glide').mount();
+</script>
 
 </html>
 
