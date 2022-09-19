@@ -9,18 +9,13 @@ const buttonActive = "button__bottom-spacer--active";
 
 $(document).ready(function(){
   console.log("nav-scroll-animate.js running");
-
-  
-
   // Set header button highlight on initial page load
   $("#button-header").children("a").children(".button__bottom-spacer").addClass(buttonActive)
   
 
   $(window).scroll(function(){
       scrollFunction();   
-  });
-
-  
+  });  
 
 });
 
@@ -55,22 +50,22 @@ function scrollFunction(navKeyValuePairs) {
   let currentNav = "";
   $(".button__bottom-spacer").removeClass(buttonActive); 
 
+  // 
   $(".section").each(function(){    
-    if(window.scrollY > ($(this).offset().top - (window.innerHeight * 0.7))) {
+    if(window.scrollY > ($(this).offset().top - (window.innerHeight * 0.5))) {
       currentSection = $(this).prop("id");      
-    }    
-   
-    // console.log(currentSection);
+    }        
   });  
 
 // Take current section and apply CSS to the associated nav button
 // use key value pair object to find.
 
   currentNav = "#button-" + currentSection.replace("section-", "");
-  console.log(currentNav);
+  console.log("current nav" + currentNav);
 
+  // Add class buttonActive to the relevant nav button
   // This traversal seems bananas too long
   // Get feedback on this
-  $(currentNav).children("a").children(".button__bottom-spacer").addClass(buttonActive); 
+  $(currentNav).children(".button__bottom-spacer").addClass("button__bottom-spacer--active"); 
 };
 
