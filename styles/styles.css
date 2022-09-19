@@ -5,7 +5,7 @@
   this into JQuery somehow? Only if needed for scroll calcs
  */
 
-
+ 
 
 /* 
   || Boilerplate padding/margin changes
@@ -27,9 +27,9 @@ html {
 :root {
   --main-bg-color: rgb(24, 42, 46);
   --secondary-bg-color: rgb(72, 99, 124);
-
-  --main-text-color: ;
-  --secondary-text-color: ;
+  --main-text-color: white;
+  --main-link-color: white;
+  --secondary-text-color: rgb(155 193 189);
 
 }
 
@@ -43,7 +43,7 @@ html {
   grid-template-rows:repeat(6, min-content);
   grid-gap: 1rem;
   background-color: var(--main-bg-color);
-  color: white;
+  color: var(--main-text-color);
   height: auto;
   width: 100%;
   /* text-align: justify; */
@@ -59,6 +59,7 @@ html {
   "cn cn cn cn cn cn cn cn cn cn cn cn";  
   
 }
+
 
 
 #section-intro {
@@ -103,9 +104,6 @@ p {
 
 
 
-
-
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
@@ -116,11 +114,13 @@ body {
   width: 100%;
   max-width: 40em;  
   margin-bottom: 8em; 
+  font-weight: 100;
 }
 
 article {
   margin-bottom: 3em;
 }
+
 
 
 .section-art__content {
@@ -149,6 +149,8 @@ article {
   z-index: 10;
   margin-bottom: 0.25em;
 
+  
+
 }
 
 
@@ -163,8 +165,9 @@ article {
   height: 3.5em;  
   min-width: 40px;
   padding: 0em 0.4em 0em 0.4em;
+  text-decoration: none !important;
+  color: var(--main-link-color)
 }
-
 
 .button__top-spacer {
   content: "";
@@ -216,7 +219,9 @@ article {
   font-weight: 100;  
 }
 
-
+h3, h4 {
+  color: var(--secondary-text-color);
+}
 
 h1 {
   /* margin-top: 0.2em; */
@@ -254,13 +259,20 @@ h4 {
 }
 
 a:link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  
+  color: var(--main-link-color);
+  transition: 0.2s;
 }
 
 a:visited {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  color: var(--main-link-color);
+}
+
+a:hover {
+  color: turquoise;
+  text-decoration-thickness: 3px;
 }
 
 
@@ -316,11 +328,12 @@ h1::after {
   margin-top: 1em;  
 }
 
-.web-portfolio__extended {  
-  /* height: 0px;  
-  opacity: 0;   */
+.web-portfolio__extended {    
+  height: 0px;  
+  opacity: 0;  
   font-family: inherit;
   font-weight: inherit;  
+  
 }
 
 .extendable-content {
@@ -349,4 +362,10 @@ h1::after {
   h3 {
     font-size: 1.5em;
   }
+}
+
+ul {
+  margin-left: 1.2em;
+  margin-top: -0.8em;
+  letter-spacing: 0.1em;
 }

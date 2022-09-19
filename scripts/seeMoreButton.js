@@ -117,7 +117,7 @@ function toggleContent(extendedContent, action, button){
 
 
 function toggleButton(action, button){
-  action == "show"? button.innerHTML = "Show Less" : button.innerHTML = "Show More";
+  action == "show"? button.innerHTML = "Less Info" : button.innerHTML = "More Info";
   console.log("trigger");
 }
 
