@@ -6,18 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zac Hogan Web Developer</title>
+
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/nav-scroll-animate.js"></script>
     <script src="scripts/easyScrollTo.js"></script>
     <script src="scripts/zHHeroAnimation.js"></script>
-    <script async src="scripts/seeMoreButton.js"></script>
+    
     <script src="https://kit.fontawesome.com/a53c6f17ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script async src="scripts/smallScripts.js"></script>
+
 
     <!-- Google Fonts link Major Mono Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link "rel=preload" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=block" rel="stylesheet">
+  
+  
+  
   </head>
 
 
@@ -179,21 +188,67 @@
 
 
   <div class="section" id="section-other">
-    <h2 id="art-header">other work</h2>
-    <div class="section-art__content">
-      <h3>design and illustrAtion</h3>   
-    </div>
-    <div class="section-art__content">
-      <h3>fungible tokens</h3>   
-      <p>Everybody wants to buy something that they can funge.<br>
-        Look no further! Wear it, funge it, swap it, sell it - it's merch, not an investment.</p>
-      
-    </div>
-    <div class="section-art__content">
-      <h3>Video</h3>   
-    </div>
-  </div>
+    <h2 id="art-header">other skills</h2>
+    <p>
+      I've done a broad range of work in my professional and hobbyist life that 
+      has given me cross-disciplinary skills and understanding.
+    </p>
 
+    <div>
+      <h3 class="section__content-heading">design and illustrAtion</h3>  
+        <p>
+          I studied Visual Art at the University of Auckland, with a partial focus on illustration and 
+          concept art for media. I've developed skills in 3D design and rendering, as well as 2D painting
+          and editing in Photoshop.
+        </p>
+        <p>
+          I have a good visual eye which has been invaluable in supporting design decisions
+          in my personal web development work.
+        </p>
+
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide"><a href="https://www.artstation.com/artwork/qQVN3z"><img src="/img/glideImages/1.jpg"></img></a></li>
+                <li class="glide__slide"><a href="https://www.artstation.com/artwork/LeQr9P"><img src="/img/glideImages/2.jpg"></img></a></li>
+                <li class="glide__slide"><a href="https://www.artstation.com/artwork/X1LOEL"><img src="/img/glideImages/3.jpg"></img></a></li>
+                <li class="glide__slide"><a href="https://www.artstation.com/artwork/8wX5Dx"><img src="/img/glideImages/4.jpg"></img></a></li>
+                <li class="glide__slide"><a href="https://www.artstation.com/artwork/8wX5Dx"><img src="/img/glideImages/5.jpg"></img></a></li>
+              </ul>
+            </div>
+          </div> 
+    </div>
+
+    <div>
+      <h3>makerspAce</h3> <h4>management, development, and design</h4>
+        <p>
+          From 2018 - present I've been the Makerspace Librarian at Auckland Central City Library,
+          responsible for managing the services and space. I'm responsible for the varied and unusual
+          technologies we host in the Makerspace, as well as the services, processes, and design of the space.
+        </p>
+        <p>
+          During my time managing the Makerspace I've developed it from a bland and uninviting space to a 
+          visually and audibly exciting area of the library through the creation and implementation of
+          distinct branding, eye-catching and effective signage and brochures, and spacial design.         
+        </p>
+        <p>
+          I've worked to achieve a significant boost in practical engagement in the space through the inclusion 
+          of exciting and useful pieces of equipment. 
+          Inventiveness and inovation has been essential here, as small budgets are a constant challenge 
+          for public libraries. Offers I have developed and delivered include:
+          <ul>
+            <li>Public Computers: Selecting and configuring blah blah blah etc detail</li>
+            <li>More stuff</li>
+            <li>Another thing etc</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+
+
+    </div>
+  
+  </div>
 
 
   <div class="section" id="section-me">
@@ -250,7 +305,19 @@
 
 
 
+<script async>
+  new Glide('.glide', {
+    type: "carousel",    
+    focusAt: "center",
+    
+    autoplay: 2500,
+    animationDuration: 1000,
+    animationTimingFunc: "ease",
+    peek: 70
+  }).mount();
+</script>
 
+<script async src="scripts/seeMoreButton.js"></script>
 
 </html>
 
