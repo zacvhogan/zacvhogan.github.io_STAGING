@@ -52,11 +52,10 @@ html {
 
   grid-template-areas: 
   "nv nv nv nv nv nv nv nv nv nv nv nv"
-  ".  hd hd hd hd hd hd hd hd hd hd  ."  
-  ".  in in in in in in in in in in  ."
-  ".  wb wb wb wb wb wb wb wb wb wb  ."
-  ".  ar ar ar ar ar ar ar ar ar ar  ."  
+  ".  hd hd hd hd hd hd hd hd hd hd  ."    
   ".  me me me me me me me me me me  ."
+  ".  wb wb wb wb wb wb wb wb wb wb  ."
+  ".  ar ar ar ar ar ar ar ar ar ar  ."   
   "cn cn cn cn cn cn cn cn cn cn cn cn";  
   
 }
@@ -220,7 +219,9 @@ article {
 
 
 
-
+.text-dull {
+  opacity: 0.4;
+}
 
 
 
@@ -229,7 +230,8 @@ article {
 #section-header {
   grid-area: hd;
   text-align: center;
-  font-weight: 100;  
+  font-weight: 100; 
+  margin-bottom: 0;
 }
 
 h3, h4 {
@@ -343,16 +345,16 @@ h1::after {
 }
 
 .web-portfolio__extended {    
-  height: 0px;  
-  opacity: 0;  
   font-family: inherit;
   font-weight: inherit;  
   
 }
 
 .extendable-content {
-  visibility: hidden;
-  height: 0px;
+  visibility: visible;
+  height: 50px;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 

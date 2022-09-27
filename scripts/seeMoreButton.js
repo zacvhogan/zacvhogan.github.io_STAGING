@@ -17,23 +17,25 @@ function buttonClick() {
   // Using the className of the parent <div> and an identifying suffix. 
   // TODO: Probably shouldn't be doing this on each click? Get advice. Maybe refactor to do this once per page load instead.
   let extendedContentSelector = "." + this.closest("div").className + "__extended";
+  console.log(extendedContentSelector);
   let extendedContent = document.querySelector(extendedContentSelector);    
 
-  // Get current visibility status of the extended content DOM node
-  // Do this once per click to ensure visiblity status always up to date
-  // Use visibility status of node instead of tracking via secondary variable - reduced chance of reassignment errors.
-  let extendedContentCSS = window.getComputedStyle(extendedContent);
-  let extendedContentState = extendedContentCSS.getPropertyValue('visibility');
 
- 
+  // Get current height of extendable content and use this to determine if we need to hide or show content.
+  // Assume any extendable content won't be less than 100px tall, test against this number.
 
-  // On each click, check content visibility
-  // Toggle - run anim. to shift to inverse state via toggleContent()
-  if (extendedContentState == "visible"){
-    toggleContent(extendedContent, "hide", this)    
+  // TODO: this creates a barrier to extending the code or making changes down the line - 
+  // WILL INTRODUCE BUGS if the height is changed too much in the CSS.
+  // Revise.
+  
+  let extendedContentHeight = parseInt(document.defaultView.getComputedStyle(extendedContent).height);
+  
+  if (extendedContentHeight > 100 ){    
+    toggleContent(extendedContent, "hide", this);  
+    
   }
-  else if (extendedContentState == "hidden"){
-    toggleContent(extendedContent, "show", this)    
+  else {
+    toggleContent(extendedContent, "show", this);      
   }
 }
 
@@ -68,7 +70,7 @@ function toggleContent(extendedContent, action, button){
   // Set animation keyframes and options
   let animHeightKeys = [
     {
-      height: "0px"        
+      height: "50px"        
     },  
     {
       height: maxHeight           
@@ -85,13 +87,13 @@ function toggleContent(extendedContent, action, button){
 
   let animVisibilityKeys = [
     {
-      opacity: 0,
+      //opacity: 0,
       // Set visibility of extendable node to track status 
-      visibility: "hidden"      
+      //visibility: "hidden"      
     },   
     {
-      opacity: 1,
-      visibility: "visible"          
+      //opacity: 1,
+      //visibility: "visible"          
     }
   ];
 
