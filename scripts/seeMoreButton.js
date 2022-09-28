@@ -1,4 +1,7 @@
 
+
+anime([]);
+
 // Find all elements in DOM with the see-more-button class, compile into array
 let buttonList = document.querySelectorAll(".see-more-button");
 
@@ -15,7 +18,8 @@ function buttonClick() {
 
   // For each button, generate selector for extended content <p> paragraph
   // Using the className of the parent <div> and an identifying suffix. 
-  // TODO: Probably shouldn't be doing this on each click? Get advice. Maybe refactor to do this once per page load instead.
+  // TODO: Potential issue: maybe unwise to do this on every button click?
+  // Maybe refactor to do this once per page load instead.
   let extendedContentSelector = "." + this.closest("div").className + "__extended";
   console.log(extendedContentSelector);
   let extendedContent = document.querySelector(extendedContentSelector);    
@@ -25,6 +29,7 @@ function buttonClick() {
   // Assume any extendable content won't be less than 100px tall, test against this number.
 
   // TODO: this creates a barrier to extending the code or making changes down the line - 
+  // Requires that the height px value is manually edited to match across CSS and JS
   // WILL INTRODUCE BUGS if the height is changed too much in the CSS.
   // Revise.
   
@@ -46,21 +51,23 @@ function toggleContent(extendedContent, action, button){
   let visibilityDelay;
   let animDirection;
   let animDuration = 300; 
+
   
   // Maximum height of extendable content. Calculated each button click to ensure up to date with
   //  document and viewport dimensions.
   let maxHeight = extendedContent.scrollHeight + "px";
+
+
 
   // If the action is to show, set CSS animation to play forwards. Else, reverse the animation.
   action == "show"? animDirection = "normal" : animDirection = "reverse";
   
   // Set animation timings.
   // If we're making the section visible, grow section FIRST then show content
-  // Otherwise, hide content first then shrink section
-  // TODO: convoluted solution, revise?
+  // Otherwise, hide content first then shrink section  
   if (animDirection == "normal"){
     heightDelay = 0;
-    visibilityDelay = animDuration;    
+    visibilityDelay = animDuration;        
   }
   else{
     heightDelay = animDuration;
@@ -86,14 +93,14 @@ function toggleContent(extendedContent, action, button){
   };
 
   let animVisibilityKeys = [
-    {
-      //opacity: 0,
-      // Set visibility of extendable node to track status 
-      //visibility: "hidden"      
+    {         
+      "mask-size": "1px 1px",
+      "-webkit-mask-size": "1px 1px",                  
     },   
-    {
-      //opacity: 1,
-      //visibility: "visible"          
+    {            
+      "-webkit-mask-size": "1px 1px",
+      "mask-size": "1px 1px",
+      color: "teal"
     }
   ];
 
@@ -107,11 +114,10 @@ function toggleContent(extendedContent, action, button){
 
   // Run the animations for height and visibility
   extendedContent.animate(animHeightKeys, animHeightOptions);
-  extendedContent.animate(animVisibilityKeys, animVisibilityOptions);
-  console.log(button);
+  extendedContent.animate(animVisibilityKeys, animVisibilityOptions);  
 
 // TODO: update height of extendedContent on window resize to retain good formatting
-// TODO: Change button text on click
+
 
 
   setTimeout(() => {toggleButton(action, button)}, animDuration);

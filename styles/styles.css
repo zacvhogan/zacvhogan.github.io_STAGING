@@ -31,7 +31,6 @@ html {
   --main-link-color: white;
   --secondary-link-color: turquoise;
   --secondary-text-color: rgb(136, 189, 183);
-
 }
 
 /* 
@@ -353,8 +352,10 @@ h1::after {
 .extendable-content {
   visibility: visible;
   height: 50px;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+  -webkit-mask-size: 10% 10%;  
+  mask-size: 10% 10%;
 }
 
 
