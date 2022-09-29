@@ -12,6 +12,8 @@ function buttonClick() {
   // THIS references current button.
   // TODO: Performance: maybe unwise to do this on EVERY button click? Try on page load.  
   let expandableContent = document.querySelector("." + this.closest("div").className + "__extended");  
+  let button = this;
+  let buttonIcon = this.firstChild;
 
   // Set max height of expandable container to fit current contents
   let maxHeight = expandableContent.scrollHeight + "px";  
@@ -19,6 +21,8 @@ function buttonClick() {
   console.log(this.activated);
 
   // Set up anime.js animation
+  // Initial values set in styles.css, apart from height which uses a [to, from] range
+  // Do not replace the to-from range with a single to value - this breaks anime.js
   let hideShowAnim = anime({
     targets: expandableContent,    
     height: [30, maxHeight],   
@@ -31,25 +35,25 @@ function buttonClick() {
   // it should smoothly reverse animation. Why?
   // Have tried checking whether hideShowAnim.began is true before setting reverse - no luck.
 
-  if (this.activated == false){
+  if (button.activated == false){
     // Animate
     hideShowAnim.play();
     // Change button icon
-    this.classList.remove("fa-chevron-down");
-    this.classList.add("fa-chevron-up");
+    buttonIcon.classList.remove("fa-chevron-down");
+    buttonIcon.classList.add("fa-chevron-up");
     // Change activated status
-    this.activated = true;
+    button.activated = true;
 
   }
-  else if (this.activated == true) {
+  else if (button.activated == true) {
 
     hideShowAnim.play();  
     hideShowAnim.reverse();
 
-    this.classList.remove("fa-chevron-up");
-    this.classList.add("fa-chevron-down");
+    buttonIcon.classList.remove("fa-chevron-up");
+    buttonIcon.classList.add("fa-chevron-down");
 
-    this.activated = false;
+    button.activated = false;
   }
   
 }
