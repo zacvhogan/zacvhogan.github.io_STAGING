@@ -351,11 +351,10 @@ h1::after {
 
 .extendable-content {
   visibility: visible;
-  height: 50px;
+  height: 30px;
   -webkit-mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
   mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
-  -webkit-mask-size: 10% 10%;  
-  mask-size: 10% 10%;
+  
 }
 
 
@@ -365,6 +364,7 @@ h1::after {
   background-color: rgba(0, 0, 0, 0);
   color: var(--main-text-color);
   transition: background-color 0.2s;
+  width: 60px;
 }
 
 .see-more-button:hover {
