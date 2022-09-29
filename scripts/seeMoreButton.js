@@ -1,39 +1,20 @@
+// TODO: Rework to use Anime.JS for animations
 
-
-anime([]);
-
-// Find all elements in DOM with the see-more-button class, compile into array
+// Find all elements in DOM with the see-more-button class, compile into array.
 let buttonList = document.querySelectorAll(".see-more-button");
-
-
-// For each item (button) in buttonList[], add event listener "click".
-// Event listener attaches an instance of buttonClick func to each button.
-// Each buttonClick func has 'this' reference bound to the each button, allows us to 
-//  access button by reference within each buttonClick instance.
+// For each item (button) in buttonList[], add property 'expanded' and set to FALSE.
+buttonList.forEach((button) => button.expanded = false);
+// For each button add event listener "click".
 buttonList.forEach((button) => button.addEventListener("click", buttonClick.bind(button)));
-
 
 
 function buttonClick() { 
 
-  // For each button, generate selector for extended content <p> paragraph
-  // Using the className of the parent <div> and an identifying suffix. 
-  // TODO: Potential issue: maybe unwise to do this on every button click?
-  // Maybe refactor to do this once per page load instead.
-  let extendedContentSelector = "." + this.closest("div").className + "__extended";
-  console.log(extendedContentSelector);
-  let extendedContent = document.querySelector(extendedContentSelector);    
+  // For each button, generate selector for extended content div using the className of the parent <div> and an identifying suffix. 
+  // THIS references current button.
+  // TODO: Performance: maybe unwise to do this on EVERY button click? Try on page load.  
+  let extendedContent = document.querySelector("." + this.closest("div").className + "__extended");    
 
-
-  // Get current height of extendable content and use this to determine if we need to hide or show content.
-  // Assume any extendable content won't be less than 100px tall, test against this number.
-
-  // TODO: this creates a barrier to extending the code or making changes down the line - 
-  // Requires that the height px value is manually edited to match across CSS and JS
-  // WILL INTRODUCE BUGS if the height is changed too much in the CSS.
-  // Revise.
-  
-  let extendedContentHeight = parseInt(document.defaultView.getComputedStyle(extendedContent).height);
   
   if (extendedContentHeight > 100 ){    
     toggleContent(extendedContent, "hide", this);  
