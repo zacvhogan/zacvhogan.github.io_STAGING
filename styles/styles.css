@@ -93,6 +93,8 @@ html {
   grid-area: cn;
   display: flex;
   flex-direction:column;
+  background-color: var(--secondary-bg-color);
+  max-width: 9999px;
 }
 
 p {
