@@ -372,18 +372,13 @@ h1::after {
   color: var(--main-text-color);
   transition: background-color 0.2s; 
   width: 70px;
-  height: 70px;
+  height: 40px;
+  background-image: url(/img/icon_arrow.svg);
+  background-size: 100%;
   
   }
 
-  .see-more-button__icon{    
-    
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-  }
+ 
 
 .see-more-button:hover {
   
